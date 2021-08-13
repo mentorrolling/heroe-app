@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const InicioScreen = () => {
+  const [heroes, setHeroes] = useState({
+    response: "",
+    datos: [],
+    loading: false,
+  });
+
+  const [inputValue, setInputValue] = useState("hola don pepito");
+
+  const changeInput = (e) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <div className="container">
       <div className="row mt-2">
@@ -17,6 +29,8 @@ const InicioScreen = () => {
                 type="text"
                 className="form-control"
                 placeholder="Search..."
+                value={inputValue}
+                onChange={changeInput}
               />
             </div>
           </form>
