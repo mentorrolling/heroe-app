@@ -10,3 +10,16 @@ export const getHeroes = async (termino) => {
     console.log(error);
   }
 };
+
+export const getHeroeId = async (id) => {
+  try {
+    const resp = await fetch(
+      `https://superheroapi.com/api.php/2977672439133477/${id}`
+    );
+    const data = await resp.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
